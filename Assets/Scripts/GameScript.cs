@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 
@@ -24,6 +25,11 @@ public class GameScript : MonoBehaviour
     [SerializeField] private Text _gameOverText;
     [SerializeField] private Button _restartButton;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource _bangSound;
+    [SerializeField] AudioSource _popSound;
+    [SerializeField] AudioSource _endGameSound;
+    
     private int _points;
     private bool _alive = true;
 
@@ -67,6 +73,7 @@ public class GameScript : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
                 _points++;
+                _popSound.Play();
             }
 
             if (hit.collider.name == prefabs[2].name)
@@ -75,6 +82,7 @@ public class GameScript : MonoBehaviour
                 _health--;
                 _hBar.instance.RemoveHearts(1);
                 Destroy(hit.collider.gameObject);
+                _bangSound.Play();
             }
         }
     }
@@ -92,6 +100,7 @@ public class GameScript : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
+        _endGameSound.Play();
     }
 
     //Creates new objects and starts fall coroutine for each object
@@ -131,6 +140,7 @@ public class GameScript : MonoBehaviour
             {
                 Destroy(nObj);
                 _health--;
+                _hBar.instance.RemoveHearts(1);
                 Debug.Log($"You lost coin or apple, be careful! You have only: {_health} Health points left!");
             }
             else
