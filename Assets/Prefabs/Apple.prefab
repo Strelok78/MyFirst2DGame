@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8127461482229912661}
   - component: {fileID: 8564032039785577200}
-  - component: {fileID: 86805097385310351}
   - component: {fileID: 1037305647310755990}
   m_Layer: 3
   m_Name: Apple
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2aa6ab62866ce4439ab7303f7da55e51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,23 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &86805097385310351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5805558882195744026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1a95d7b13a6a64db419be0f4e8fef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lifeTime: 5
-  _dropSpeed: 0.15
-  _dropTime: 0.05
-  _gameScript: {fileID: 0}
-  _water: {fileID: 8281933508777909266, guid: 0a265dcda4375de49a86757b3df78dd5, type: 3}
 --- !u!61 &1037305647310755990
 BoxCollider2D:
   m_ObjectHideFlags: 0
