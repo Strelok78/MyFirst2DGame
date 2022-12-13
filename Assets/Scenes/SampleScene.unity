@@ -3843,7 +3843,7 @@ MonoBehaviour:
   _maxX: 10
   _lifeTime: 6
   _dropSpeed: 2
-  _health: 2
+  _health: 5
   _pointsText: {fileID: 1497476744}
   _hBar: {fileID: 525014819}
   _gameOverText: {fileID: 1807199863}
