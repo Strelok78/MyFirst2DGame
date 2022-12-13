@@ -69,10 +69,17 @@ public class GameScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider != null)
         {
-            if (hit.collider.name == prefabs[0].name || hit.collider.name == prefabs[1].name)
+            if (hit.collider.name == prefabs[0].name)
             {
                 Destroy(hit.collider.gameObject);
                 _points++;
+                _popSound.Play();
+            }
+
+            if (hit.collider.name == prefabs[1].name)
+            {
+                Destroy(hit.collider.gameObject);
+                _points += 2;
                 _popSound.Play();
             }
 
